@@ -8,7 +8,7 @@ class Category:
       items = ""
       total = 0
       for led in self.ledger:
-          items += f"{led['description'][0:23]:23}" + f"{led['amount']:>7.2f}" 
+          items += f"{led['description'][:23]:23}" + f"{led['amount']:>7.2f}" 
           total += led['amount']
       out = title + items + "Total: " + str(total)
       return out
@@ -44,3 +44,4 @@ class Category:
         if self.get_balance >= amount:
             return True
         return False
+          
